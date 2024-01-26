@@ -81,6 +81,7 @@ void Game::processEvents()
 }
 
 
+
 /// <summary>
 /// deal with key presses from the user
 /// </summary>
@@ -103,6 +104,7 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		m_window.close();
 	}
+	animation();
 }
 
 /// <summary>
@@ -149,4 +151,14 @@ void Game::setupSprite()
 	m_heloSprite.setTexture(m_heloTexture);
 	m_heloSprite.setPosition(m_location);
 	m_heloSprite.setTextureRect(sf::IntRect{0, 0, 180, 64});
+}
+void Game::animation()
+{
+	m_frameCounter += m_frameincrement;
+	int m_lastFrame = m_currentFrame ;
+	m_currentFrame = static_cast<int>(m_frameCounter) % 4;
+	if (m_lastFrame != m_currentFrame)
+	{
+		m_heloSprite.setTextureRect(sf::IntRect{0, m_currentFrame * 64, 180, 64});
+	}
 }

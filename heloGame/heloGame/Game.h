@@ -27,7 +27,7 @@ private:
 	void processKeys(sf::Event t_event);
 	void update(sf::Time t_deltaTime);
 	void render();
-
+	void animation();
 	void setupFontAndText();
 	void setupSprite();
 
@@ -37,6 +37,11 @@ private:
 	sf::Sprite m_heloSprite;//sprite for helocoptar
 	sf::Texture m_heloTexture;//texture for helocoptar
 	sf::Vector2f m_location{200.0f, 200.0f};//starting location for helo 
+	
+	int m_currentFrame = 0;//current frame 
+	float m_frameCounter = 0.0f; // counter 
+	float m_frameincrement = 0.25f; //increment
+
 
 	bool m_exitGame; // control exiting game
 
