@@ -10,6 +10,12 @@
 /// Don't forget the endif at the bottom
 /// </summary>
 #include <SFML/Graphics.hpp>
+enum class Direction
+{
+	None,
+	Left,
+	Right
+};
 
 class Game
 {
@@ -25,6 +31,8 @@ private:
 
 	void processEvents();
 	void processKeys(sf::Event t_event);
+	void processMouse( sf::Event t_event);
+
 	void update(sf::Time t_deltaTime);
 	void render();
 	void animation();
@@ -40,8 +48,9 @@ private:
 	
 	int m_currentFrame = 0;//current frame 
 	float m_frameCounter = 0.0f; // counter 
-	float m_frameincrement = 0.25f; //increment
+	float m_frameincrement = 0.05f; //increment
 
+	Direction m_heading = Direction::None;
 
 	bool m_exitGame; // control exiting game
 

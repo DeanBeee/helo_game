@@ -77,6 +77,10 @@ void Game::processEvents()
 		{
 			processKeys(newEvent);
 		}
+		if (sf::Event::MouseButtonPressed == newEvent.type)
+		{
+			processMouse(newEvent);
+		}
 	}
 }
 
@@ -92,6 +96,11 @@ void Game::processKeys(sf::Event t_event)
 	{
 		m_exitGame = true;
 	}
+}
+
+void Game::processMouse(sf::Event t_event)
+{
+	// do more stuff
 }
 
 /// <summary>
