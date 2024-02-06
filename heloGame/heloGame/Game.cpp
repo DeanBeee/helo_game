@@ -100,7 +100,12 @@ void Game::processKeys(sf::Event t_event)
 
 void Game::processMouse(sf::Event t_event)
 {
-	// do more stuff
+	float lenth = 0.0f;
+	sf::Vector2f displacement(0.0f, 0.0f);
+	if (sf::Mouse::Middle == t_event.mouseButton.button)
+	{
+
+	}
 }
 
 /// <summary>
@@ -114,6 +119,7 @@ void Game::update(sf::Time t_deltaTime)
 		m_window.close();
 	}
 	animation();
+	move();
 }
 
 /// <summary>
@@ -169,5 +175,5 @@ void Game::animation()
 	if (m_lastFrame != m_currentFrame)
 	{
 		m_heloSprite.setTextureRect(sf::IntRect{0, m_currentFrame * 64, 180, 64});
+
 	}
-}
