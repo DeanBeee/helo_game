@@ -37,7 +37,7 @@ private:
 	void render();
 	void animation();
 	void setupFontAndText();
-	void move();
+	void move(); 
 	void setupSprite();
 
 	sf::RenderWindow m_window; // main SFML window
@@ -55,7 +55,7 @@ private:
 	sf::Vector2f m_location{ 400.0f, 300.0f };
 	sf::Vector2f m_velocity{ 0.0f, 0.0f };
 	sf::Vector2f m_target{ 0.0f, 0.0f };
-	Direction m_facing = Direction::None;
+	Direction m_direction = { Direction::None };
 	float m_speed = 3.5f;
 
 	bool m_exitGame; // control exiting game

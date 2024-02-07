@@ -98,15 +98,6 @@ void Game::processKeys(sf::Event t_event)
 	}
 }
 
-void Game::processMouse(sf::Event t_event)
-{
-	float lenth = 0.0f;
-	sf::Vector2f displacement(0.0f, 0.0f);
-	if (sf::Mouse::Middle == t_event.mouseButton.button)
-	{
-
-	}
-}
 
 /// <summary>
 /// Update the game world
@@ -177,3 +168,20 @@ void Game::animation()
 		m_heloSprite.setTextureRect(sf::IntRect{0, m_currentFrame * 64, 180, 64});
 
 	}
+	void Game::processMouse(sf::Event t_event)
+	{
+		float m_lenth = 0.0f;
+		sf::Vector2f m_heading{ 0.0f, 0.0f };
+		{
+			m_target.x = static_cast<float>(t_event.mouseButton.x);
+			m_target.y = static_cast<float>(t_event.mouseButton.y);
+			m_heading - m_target - m_location;
+			if (m_heading.x < 0)
+			{
+				m_direction = Direction::Right;
+				m_heloSprite.setScale(-1.0, 1.0);
+
+			}
+			else
+				m_direction = Direction
+		}
